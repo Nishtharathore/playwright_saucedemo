@@ -10,7 +10,7 @@ class LoginPage:
         self.page = page
         self.username = page.get_by_test_id("username")
         self.password = page.get_by_test_id("password")
-        self.login_button = page.get_by_test_id("login-buttonWRONG")
+        self.login_button = page.get_by_test_id("login-button")
         self.error_msg = page.get_by_test_id("error")
 
     @allure.step("Navigate to login page")
