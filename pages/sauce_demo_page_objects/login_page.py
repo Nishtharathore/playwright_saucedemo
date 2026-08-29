@@ -1,8 +1,7 @@
 import re
-
 import allure
 from playwright.sync_api import Page, expect
-from config import BASE_URL
+from config import BASE_URL_SAUCEDEMO
 
 
 class LoginPage:
@@ -15,7 +14,7 @@ class LoginPage:
 
     @allure.step("Navigate to login page")
     def goto(self):
-        self.page.goto(BASE_URL)
+        self.page.goto(BASE_URL_SAUCEDEMO)
 
     @allure.step("login with username '{username}'")
     def login(self, username: str, password: str):

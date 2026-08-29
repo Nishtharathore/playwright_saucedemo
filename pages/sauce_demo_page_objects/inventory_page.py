@@ -1,6 +1,6 @@
 import allure
 from playwright.sync_api import Page, expect
-from config import BASE_URL
+from config import BASE_URL_SAUCEDEMO
 
 
 class InventoryPage:
@@ -12,7 +12,7 @@ class InventoryPage:
 
     @allure.step("Validate landing on inventory page")
     def validate_landing_on_inventory_page(self):
-        expect(self.page).to_have_url(BASE_URL + "inventory.html")
+        expect(self.page).to_have_url(BASE_URL_SAUCEDEMO + "inventory.html")
 
     @allure.step("Validate product details are visible")
     def validate_product_details_are_visible(self):

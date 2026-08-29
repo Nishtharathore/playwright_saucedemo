@@ -1,0 +1,2 @@
+from pages.sauce_demo_page_objects.login_page import LoginPage
+from pages.sauce_demo_page_objects.inventory_page import InventoryPage

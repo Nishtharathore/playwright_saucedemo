@@ -1,14 +1,13 @@
-import time
 import pytest
 from playwright.sync_api import Page
-import pages
+from pages import sauce_demo_page_objects
 
 class TestLogin:
     @pytest.fixture(autouse=True)
     def setup(self, page: Page):
         self.page = page
-        self.login_page = pages.LoginPage(page)
-        self.inventory_page = pages.InventoryPage(page)
+        self.login_page = sauce_demo_page_objects.LoginPage(page)
+        self.inventory_page = sauce_demo_page_objects.InventoryPage(page)
 
     def test_valid_login(self):
         self.login_page.goto()
