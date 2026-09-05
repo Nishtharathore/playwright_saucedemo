@@ -18,13 +18,11 @@ def pytest_runtest_makereport(item, call):
     setattr(item, f"rep_{rep.when}", rep)
 
 
-GITHUB_USERNAME = "Nishtharathore"
-REPO_NAME = "playwright_saucedemo"
-PAGES_BASE_URL = f"https://{GITHUB_USERNAME}.github.io/{REPO_NAME}"
-
-
 @pytest.fixture(autouse=True)
 def attach_trace_to_allure(request):
+    GITHUB_USERNAME = os.environ["GITHUB_PAGES_USERNAME"]
+    REPO_NAME = os.environ["GITHUB_PAGES_REPO"]
+    PAGES_BASE_URL = f"https://{GITHUB_USERNAME}.github.io/{REPO_NAME}"
     start_time = time.time()
     yield
 

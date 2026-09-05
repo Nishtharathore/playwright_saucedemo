@@ -20,6 +20,9 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_PAGES_USERNAME: ${{ github.repository_owner }}
+      GITHUB_PAGES_REPO: ${{ github.event.repository.name }}
 
     steps:
       - name: Checkout code
@@ -86,11 +89,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-#runner , on push / pull request (dev repo or automation repo), pipe symbol , hyphen symbol, - name: Set up Python uses: actions/setup-python@v5 (is this pre-exisitng , if yes can something be made) , Downloads the Chromium binary Playwright drives (use of this instllation , what will happen if this isnt installed )  ,   - name: Upload Pages artifact
-#        uses: actions/upload-pages-artifact@v3
-#        with:
-#          path: allure-report
-#Packages the allure-report folder into the special artifact format GitHub Pages deployment expects (this is different from upload-artifact above — it's Pages-specific)how is this different
-#
-#order of execution is sequential of parallel in yml file?
