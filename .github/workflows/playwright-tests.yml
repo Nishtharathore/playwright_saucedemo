@@ -62,7 +62,7 @@ jobs:
       - name: Copy traces into report for public hosting
         run: |
           mkdir -p allure-report/traces
-          find test-results -name "trace-*.zip" -exec cp {} allure-report/traces/ \; 2>/dev/null || true
+          cp test-results-renamed/*.zip allure-report/traces/ 2>/dev/null || true
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
